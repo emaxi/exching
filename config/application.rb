@@ -1,10 +1,9 @@
-require File.expand_path('../boot', __FILE__)
 
+require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 if defined?(Bundler)
-  # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # If you precompile assets before deploying to production, use this line Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
@@ -58,5 +57,8 @@ module Exching
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Nedeed for Active Admin
+    config.assets.initialize_on_precompile = false
   end
 end
