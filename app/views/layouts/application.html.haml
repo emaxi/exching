@@ -12,11 +12,13 @@
           %a{:href => "http://exching.com/", :name => "top"}
             =image_tag('exching_logo.jpg', alt: 'Exching - Buy & Sell Used Clothing Online', id: 'logo')
         %h1.intro Buy & Sell Used Clothing Online
-        /
-          <div id="loggedin">
-          <div id="welcomeMsg">
-          </div>
-          </div>
+        - if user_signed_in?
+          #loggedin
+            Logged in as 
+            %strong
+              = current_user.email
+            = link_to 'log out'
+          #welcomeMsg
         %form#search{:action => "http://exching.com/items/search", :method => "post"}
           %input{:name => "action", :type => "hidden", :value => "search"}
             = image_tag('mag.png', class: 'mag')
@@ -28,7 +30,7 @@
         = image_tag('start_selling.png', alt: 'Start selling your used clothing in less than 30 seconds.', id: 'start_selling')
         %ul#topnav
           %li
-            %a.active{:href => "http://exching.com/"} Home
+            %a.active{:href => root_url} Home
           %li
             %a{:href => "http://exching.com/items/shop/all"} Shop
           %li
@@ -38,9 +40,9 @@
           %li
             %a{:href => "http://blog.exching.com", :target => "_blank"} Blog
           %li.rightlink
-            %a{:href => "http://exching.com/users/register"} Register
+            %a{:href => new_user_registration_url} Register
           %li.rightlink
-            %a{:href => "http://exching.com/users/login"} Sign In
+            %a{:href => new_user_session_url} Sign In
           .clear
       #body
         = yield

@@ -1,0 +1,51 @@
+#body
+  %ul.crumbs
+    %li
+      %a{:href => "http://exching.com/"}> home
+      \ » 
+    %li
+      %a.active{:href => "http://exching.com/users/login"} sign in
+  .outline.box
+    %h2 Sign In
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      = devise_error_messages!
+      %input{:name => "action", :type => "hidden", :value => "login"}
+        %fieldset
+          .row
+            %label email address
+            = f.email_field :email, class: 'txt'
+          .row
+            %label password
+            = f.password_field :password, class: 'txt'
+          .row
+            %a{:href => "http://exching.com/users/forgot"} forgot your password?
+        %a#login_btn.pink.btn{:href => "#"} Sign In
+        .clear
+  .outline.box.center
+    %h2 Register
+    %p
+      Once you register you can sell your clothing and accessories here! Create your account and you will be on your way.
+      %br It's free to sign up and sell.
+    /
+      <p><a href="https://www.facebook.com/dialog/oauth?client_id=168038129881828&redirect_uri=http%3A%2F%2Fexching.com%2Fusers%2Fregister&scope=offline_access,user_location,user_photos,email,publish_stream"><img src="images/fbsignup_btn.png" /></a></p>
+      <p style="padding: 0;"><strong>or</strong></p>
+    %a.black.btn{:href => new_user_registration_url} Register
+  .outline.box
+    %h2 FAQ
+    %ul.faq
+      %li
+        %a{:href => "http://exching.com/pages/faq"} What is Exching?
+      %li
+        %a{:href => "http://exching.com/pages/faq"} How does it work?
+      %li
+        %a{:href => "http://exching.com/pages/faq"} Why is it free?
+      %li
+        %a{:href => "http://exching.com/pages/faq"} How do I sell my stuff?
+    %a.more{:href => "http://exching.com/pages/faq"} More Answers
+  .clear
+
+:javascript
+  $('a.pink').click(function(){
+    $('#new_user').submit();
+  });
+

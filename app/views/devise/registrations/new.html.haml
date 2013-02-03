@@ -1,0 +1,114 @@
+%ul.crumbs
+  %li
+    %a{:href => "http://exching.com/"}> home
+    \ » 
+  %li
+    %a.active{:href => "http://exching.com/users/register"} register
+.outline
+  %h2 Register Now
+  %p.intro You need to register before you can sell items, but you can shop and buy items without registering.
+  /
+    <p>You can sign up with Facebook:<br /><a href="https://www.facebook.com/dialog/oauth?client_id=168038129881828&redirect_uri=http%3A%2F%2Fexching.com%2Fusers%2Fregister&scope=offline_access,user_location,user_photos,email,publish_stream"><img src="images/fbsignup_btn.png" /></a></p>
+    <p><strong>or</strong></p>
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    %input{:name => "action", :type => "hidden", :value => "register"}
+      %fieldset
+        .row
+          %label your city
+          %select{:name => "city_id"}
+            %option{:value => "58"} abbotsford
+            %option{:value => "5"} calgary
+            %option{:value => "59"} chilliwack
+            %option{:value => "4"} edmonton
+            %option{:value => "44"} halifax
+            %option{:value => "14"} kelowna
+            %option{:value => "7"} montreal
+            %option{:value => "2"} nanaimo
+            %option{:value => "9"} ottawa
+            %option{:value => "16"} parksville
+            %option{:value => "10"} quebec city
+            %option{:value => "11"} regina
+            %option{:value => "12"} saskatoon
+            %option{:value => "13"} st. johns
+            %option{:value => "8"} toronto
+            %option{:value => "15"} tri-cities
+            %option{:selected => "", :value => "1"} vancouver
+            %option{:value => "3"} victoria
+            %option{:value => "6"} winnipeg
+            %option{:value => ""} -------------
+            %option{:value => "17"} atlanta
+            %option{:value => "18"} austin
+            %option{:value => "57"} birmingham
+            %option{:value => "19"} boston
+            %option{:value => "20"} chicago
+            %option{:value => "21"} dallas
+            %option{:value => "22"} denver
+            %option{:value => "23"} detroit
+            %option{:value => "46"} hayward
+            %option{:value => "47"} homer
+            %option{:value => "24"} houston
+            %option{:value => "54"} inland empire
+            %option{:value => "25"} las vegas
+            %option{:value => "26"} los angeles
+            %option{:value => "27"} miami
+            %option{:value => "28"} minneapolis
+            %option{:value => "51"} modesto
+            %option{:value => "53"} new jersey
+            %option{:value => "40"} new york
+            %option{:value => "30"} orange county
+            %option{:value => "31"} philadelphia
+            %option{:value => "32"} phoenix
+            %option{:value => "43"} pittsburgh
+            %option{:value => "33"} portland
+            %option{:value => "42"} pullman
+            %option{:value => "34"} raleigh
+            %option{:value => "55"} riverside
+            %option{:value => "41"} rochester
+            %option{:value => "35"} sacramento
+            %option{:value => "36"} san diego
+            %option{:value => "38"} san francisco
+            %option{:value => "45"} san mateo
+            %option{:value => "37"} seattle
+            %option{:value => "52"} springfield
+            %option{:value => "49"} st. louis
+            %option{:value => "50"} stockton
+            %option{:value => "56"} tulsa
+            %option{:value => "48"} tumwater
+            %option{:value => "39"} washington dc
+        .row.radios
+          %label Are you an individual person, or a store? It's free to sign up as either.
+          %input{:checked => "", :name => "type", :type => "radio", :value => "0"}
+            %span.radio_label An Individual
+            %input{:name => "type", :type => "radio", :value => "1"}
+              %span.radio_label A Store
+        .row
+          %label your name
+          %input.txt{:name => "name", :type => "text", :value => ""}
+            %span this is what people will call you
+        .row
+          %label email address
+          = f.email_field :email, :autofocus => true, class: 'txt'
+        .row
+          %label password
+          = f.password_field :password, class: 'txt'
+          %span.hint must be at least 5 characters
+        .row
+          %label repeat password
+          = f.password_field :password_confirmation, class: 'txt'
+        .row.captcha
+          %img{:src => "http://exching.com//users/captcha"}
+            %label
+            %input.txt{:name => "crc", :type => "text", :value => ""}
+      %fieldset
+        .row
+          %input{:name => "agree", :type => "checkbox", :value => "1"}
+            I agree to the
+            %a{:href => "http://exching.com/pages/user-agreement/", :target => "_blank"} User Agreement
+      %a#register_btn.pink.btn{:href => "#"} Register
+      .clear
+
+:javascript
+  $('a.pink').click(function(){
+    $('#new_user').submit();
+  });
