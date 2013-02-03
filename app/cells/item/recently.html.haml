@@ -1,6 +1,6 @@
 %h3 recently added clothing for sale
 %ul#featureditems
-  - @items_recently_created.each do |item|
+  - @items_recently_created && @items_recently_created.each do |item|
     %li
       %a.img{:href => @item.image, :style => "background-image: url('images/items/Imagen 025_thumb.jpg')"}  
       %p

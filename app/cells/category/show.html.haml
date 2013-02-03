@@ -2,6 +2,6 @@
 %ul#leftnav
   %li
     %a{:href => "http://exching.com/items/shop/all"} all
-  -  @categories.each do |category|
+  - @categories && @categories.each do |category|
     %li
       = link_to @category.name

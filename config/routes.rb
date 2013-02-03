@@ -1,13 +1,12 @@
 Exching::Application.routes.draw do
+  root to: 'home#index'
+
+  resources :items, only: [:index, :show]
+
   devise_for :users
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root to: 'home#index'
-
-  #devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
-
-  #ActiveAdmin.routes(self)
 end

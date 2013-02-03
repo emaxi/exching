@@ -1,7 +1,10 @@
 class ItemCell < Cell::Rails
 
   def recently
-    @items_recently_created = Item.recently_created
+    city = City.find_by_name(@city)
+    if city
+      @items_recently_created = city.items.recently_created
+    end
 
     render
   end
