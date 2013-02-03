@@ -90,6 +90,9 @@ GEM
       multi_json (~> 1.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.0)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     fastercsv (1.5.5)
     ffi (1.3.1)
     formtastic (2.2.1)
@@ -248,7 +251,7 @@ DEPENDENCIES
   cells
   coffee-rails (~> 3.2.1)
   devise
-  factory_girl
+  factory_girl_rails (~> 4.0)
   growl (= 1.0.3)
   guard-rspec (= 1.2.1)
   guard-spork!

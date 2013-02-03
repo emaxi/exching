@@ -1,12 +1,16 @@
-sequence(:random_string) {|n| LoremIpsum.generate }
-sequence(:email) {|n| "user#{n}@example.com" }
-
 FactoryGirl.define do
+  sequence(:random_string) {|n| "random#{n}" }
+  sequence(:email) {|n| "user#{n}@example.com" }
+
   factory :category do
     name {generate(:random_string)}
   end
 
   factory :city do
+    name {generate(:random_string)}
+  end
+  
+  factory :event do
     name {generate(:random_string)}
   end
 
