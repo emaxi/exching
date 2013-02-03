@@ -2,4 +2,4 @@ user = User.create!(email: 'user@example.com', password: 'secretisimo', password
 
 cities = City.create!([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 
-categories = Category.create!(['foo', 'bar'])
+categories = Category.create!([{name: 'foo'}, {name: 'bar'}])

@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
 
   def guess_city_name
     @city ||= City.first
-    @city.name if @city
+    @city.name if @city.present?
   end
 end
