@@ -6,4 +6,77 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      #header
+        %h1
+          %a{:href => "http://exching.com/", :name => "top"}
+            =image_tag('exching_logo.jpg', alt: 'Exching - Buy & Sell Used Clothing Online', id: 'logo')
+        %h1.intro Buy & Sell Used Clothing Online
+        /
+          <div id="loggedin">
+          <div id="welcomeMsg">
+          </div>
+          </div>
+        %form#search{:action => "http://exching.com/items/search", :method => "post"}
+          %input{:name => "action", :type => "hidden", :value => "search"}
+            = image_tag('mag.png', class: 'mag')
+            %input{:name => "keywords", :type => "text"}
+            %a#search_btn{:href => "#"} search
+        #choosecity
+          %span Vancouver
+          %a.change{:href => "#"} change city
+        = image_tag('start_selling.png', alt: 'Start selling your used clothing in less than 30 seconds.', id: 'start_selling')
+        %ul#topnav
+          %li
+            %a.active{:href => "http://exching.com/"} Home
+          %li
+            %a{:href => "http://exching.com/items/shop/all"} Shop
+          %li
+            %a{:href => "http://exching.com/items/sell"} Sell
+          %li
+            %a{:href => "http://exching.com/pages/about-exching"} About
+          %li
+            %a{:href => "http://blog.exching.com", :target => "_blank"} Blog
+          %li.rightlink
+            %a{:href => "http://exching.com/users/register"} Register
+          %li.rightlink
+            %a{:href => "http://exching.com/users/login"} Sign In
+          .clear
+      = yield
+
+      #footer
+        %ul
+          %li
+            %a{:href => "http://exching.com/pages/about-exching"} About
+            |
+          %li
+            %a{:href => "http://exching.com/items/shop"} Buy Used Clothing
+            |
+          %li
+            %a{:href => "http://exching.com/items/sell"} Sell Used Clothing
+            |
+          %li
+            %a{:href => "http://exching.com/pages/privacy-policy"} Privacy
+            |
+          %li
+            %a{:href => "http://exching.com/pages/user-agreement"} Terms
+            |
+          %li
+            %a{:href => "http://exching.com/pages/contact"} Contact
+            |
+          %li
+            %a{:href => "http://exching.com/pages/site-map"} Site Map
+        %p.copyright
+          %a.social.facebook{:href => "https://www.facebook.com/pages/Exching/396341703716081"}
+            %span Like Us
+          %a.social.twitter{:href => "http://twitter.com/exching"}
+            %span
+              Follow @Exching
+              %span
+          %span.copy
+            %br © 2013 Exching - Buy & Sell Used Clothing Online
+        %p.input{:style => "position: absolute; top: 40px; right: 0; font-size: 7pt;"}
+          %a{:href => "http://inputlogic.ca", :style => "text-decoration: none;", :title => "Input Logic Inc."}
+            Nanaimo Web Design
+            %span{:style => "background-color: #000; padding: 3px; color: #fff;"} input
+        .clear

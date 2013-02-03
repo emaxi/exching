@@ -350,8 +350,8 @@ a.social {
 	float: left;
 }
 a.social span { position: relative;  }
-a.social.facebook { background-image: url('../images/facebook.png'); background-repeat: no-repeat; }
-a.social.twitter { background-image: url('../images/twitter.png'); background-repeat: no-repeat; padding-right: 0; }
+a.social.facebook { background-image: url(<%= asset_path 'facebook.png' %>); background-repeat: no-repeat; }
+a.social.twitter { background-image: url(<%= asset_path 'twitter.png' %>); background-repeat: no-repeat; padding-right: 0; }
 a.social:hover { color: #e62f63; }
 span.copy { padding-top: 5px; display: block; }
 span.error { display: block; margin-top: 10px; }
