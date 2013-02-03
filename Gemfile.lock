@@ -167,11 +167,13 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
+  devise
   jquery-rails
   less-rails (= 2.2.6)
+  meta_search (>= 1.1.0.pre)
   pg
-  rails (= 3.2.11)
-  sass-rails (~> 3.2.3)
+  rails
+  sass-rails
   sqlite3
   therubyracer (= 0.11.2)
   twitter-bootstrap-rails (= 2.2.0)
