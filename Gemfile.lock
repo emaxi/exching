@@ -48,6 +48,9 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    cells (3.8.8)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -172,6 +175,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  cells
   coffee-rails (~> 3.2.1)
   devise
   haml-rails

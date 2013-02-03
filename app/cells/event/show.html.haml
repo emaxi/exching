@@ -1,0 +1,5 @@
+%h3 events
+%ul#leftnav
+  - @events.each do |event|
+    %li
+      = link_to @event.name

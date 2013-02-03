@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails'
 
 gem 'activeadmin'
+gem 'cells'
 gem 'devise'
 gem 'haml-rails'
 gem 'sass-rails' #Due Active Admin
