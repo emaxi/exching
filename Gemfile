@@ -4,6 +4,9 @@ gem 'rails', '3.2.11'
 
 gem 'activeadmin'
 gem 'jquery-rails'
+gem 'less-rails',              '2.2.6'
+gem 'therubyracer',            '0.11.2'
+gem 'twitter-bootstrap-rails', '2.2.0'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
