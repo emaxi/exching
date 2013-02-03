@@ -1,0 +1,22 @@
+#left
+  = render_cell :category, :show
+  = render_cell :event, :show
+#main
+  #features
+    %a{:href => "http://exching.com/users/register"}
+      = image_tag('feature.jpg', alt: 'It\'s Free to Buy & Sell Used Clothing On Exching - Sign Up Now! Get great deals on used clothing and accessories. Cheap brand names!')
+  %form#signin{:action => "http://exching.com/users/login", :method => "post"}
+    %input{:name => "action", :type => "hidden", :value => "login"}
+      %h2 Sign In
+      .row
+        %label email
+        %input.txt{:name => "email", :type => "text"}
+      .row
+        %label password
+        %input.txt{:name => "password", :type => "password"}
+      .row
+        %a{:href => "http://exching.com/users/register"} no account? it's free to register
+      .row
+        %a#signin_btn.black.btn{:href => "#"} sign in
+  = render_cell :item, :recently
+.clear
