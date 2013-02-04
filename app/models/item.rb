@@ -3,6 +3,8 @@ class Item < ActiveRecord::Base
   belongs_to :city
   belongs_to :category
 
+  validates_presence_of :title, :description, :price, :brand
+
   class << self
     def recently_created
       last(10)

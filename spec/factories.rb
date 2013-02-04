@@ -16,6 +16,7 @@ FactoryGirl.define do
 
   factory :item do
     title {generate(:random_string)}
+    brand {generate(:random_string)}
     description {generate(:random_string)}
     price {rand(1..500)}
   end
