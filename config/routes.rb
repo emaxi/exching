@@ -1,5 +1,16 @@
+class Subdomain
+  def self.matches?(request)
+    request.subdomain.present? && request.subdomain != 'www'
+  end
+end
+
 Exching::Application.routes.draw do
-  root to: 'home#index'
+
+  constraints(Subdomain) do
+    match '/' => 'cities#show'
+  end
+
+  root to: 'home#landing'
 
   resources :items, only: [:index, :show]
 

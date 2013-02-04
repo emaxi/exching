@@ -1,0 +1,76 @@
+#left
+  = render_cell :category, :show
+  = render_cell :event, :show
+#main
+  #features
+    %a{:href => "http://exching.com/users/register"}
+      = image_tag('feature.jpg', alt: 'It\'s Free to Buy & Sell Used Clothing On Exching - Sign Up Now! Get great deals on used clothing and accessories. Cheap brand names!')
+  %form#signin{:action => "http://exching.com/users/login", :method => "post"}
+    %input{:name => "action", :type => "hidden", :value => "login"}
+      %h2 Sign In
+      .row
+        %label email
+        %input.txt{:name => "email", :type => "text"}
+      .row
+        %label password
+        %input.txt{:name => "password", :type => "password"}
+      .row
+        %a{:href => "http://exching.com/users/register"} no account? it's free to register
+      .row
+        %a#signin_btn.black.btn{:href => "#"} sign in
+  %h3 recently added clothing for sale
+  %ul#featureditems
+    - @items_recently_created && @items_recently_created.each do |item|
+      %li
+        %a.img{:href => @item.image, :style => "background-image: url('images/items/Imagen 025_thumb.jpg')"}  
+        %p
+          %span.name= @item.title
+          %span.price= @item.price
+    %li
+      %a.img{:href => "http://exching.com/items/details/4140/guess-sweater-dress", :style => "background-image: url('images/items/dress 154_thumb.jpg')"}  
+      %p
+        %span.name guess
+        %span.price $30
+    %li
+      %a.img{:href => "http://exching.com/items/details/4139/from-japan", :style => "background-image: url('images/items/dress 168_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $35
+    %li
+      %a.img{:href => "http://exching.com/items/details/4138/party-dress-from-mystic", :style => "background-image: url('images/items/dress 156_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $30
+    %li.fifth
+      %a.img{:href => "http://exching.com/items/details/4136/party-dress", :style => "background-image: url('images/items/dress 176_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $30
+    %li
+      %a.img{:href => "http://exching.com/items/details/4135/from-korea", :style => "background-image: url('images/items/dress 177_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $35
+    %li
+      %a.img{:href => "http://exching.com/items/details/4134/party-dress", :style => "background-image: url('images/items/dress 137_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $20
+    %li
+      %a.img{:href => "http://exching.com/items/details/4133/party-dress", :style => "background-image: url('images/items/dress 116_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $30
+    %li
+      %a.img{:href => "http://exching.com/items/details/4132/shimmy-dress", :style => "background-image: url('images/items/dress 1_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $25
+    %li.fifth
+      %a.img{:href => "http://exching.com/items/details/4131/from-japan", :style => "background-image: url('images/items/Japanese dress_thumb.jpg')"}  
+      %p
+        %span.name other
+        %span.price $30
+    .clear
+  %a.top{:href => "http://exching.com/"} back to top
+.clear
