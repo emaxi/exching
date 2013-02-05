@@ -63,5 +63,11 @@ module Exching
 
     # Nedeed for Active Admin
     config.assets.initialize_on_precompile = false
+
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :haml
+      g.test_framework  :rspec
+    end
   end
 end
