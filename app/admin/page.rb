@@ -1,5 +1,6 @@
 ActiveAdmin.register Page do
 
+  filter :title
   index do
     column :title
     column :actions do |page|
