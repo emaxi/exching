@@ -5,6 +5,7 @@ gem 'rails'
 gem 'activeadmin'
 gem 'cells'
 gem 'devise'
+gem 'friendly_id'
 gem 'haml-rails'
 gem 'sass-rails' #Due Active Admin
 gem "meta_search",    '>= 1.1.0.pre' # Due Active Admin
