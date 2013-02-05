@@ -8,3 +8,5 @@ item = Item.new(title: 'some title', description: 'daskdasdaskdas')
 item.category = Category.last
 item.city = City.last
 item.save
+
+admin_user = AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

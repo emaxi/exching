@@ -1,6 +1,8 @@
 require 'activeadmin'
 require 'devise'
 require 'cells'
+require 'mercury-rails'
+require 'paperclip'
 
 require File.expand_path('../boot', __FILE__)
 require 'rails/all'

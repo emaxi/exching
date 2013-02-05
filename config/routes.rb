@@ -6,6 +6,12 @@ end
 
 Exching::Application.routes.draw do
 
+    namespace :mercury do
+      resources :images
+    end
+
+  mount Mercury::Engine => '/'
+
   constraints(Subdomain) do
     match '/' => 'cities#show'
   end
