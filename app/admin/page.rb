@@ -5,7 +5,6 @@ ActiveAdmin.register Page do
     column :actions do |page|
       link_to 'View', page_path(page)
       link_to "Edit Page", "/editor/pages/" + page.id.to_s
-      link_to "Edit Page", "/editor/pages/" + ""
     end
   end
 
