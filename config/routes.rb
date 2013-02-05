@@ -5,10 +5,13 @@ class Subdomain
 end
 
 Exching::Application.routes.draw do
+  Mercury::Engine.routes
 
-    namespace :mercury do
-      resources :images
-    end
+  resources :pages, only: [:update, :show]
+
+   namespace :mercury do
+     resources :images
+   end
 
   mount Mercury::Engine => '/'
 

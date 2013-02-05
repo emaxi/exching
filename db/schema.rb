@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(:version => 20130205011949) do
   end
 
   create_table "pages", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "slug"
     t.text     "content"
     t.string   "meta_content"
