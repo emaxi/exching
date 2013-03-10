@@ -29,6 +29,10 @@ group :development do
 end
 
 group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+
   gem 'guard-rspec', '1.2.1'
   gem 'guard-spork', github: 'guard/guard-spork'
   gem 'rspec-rails', '2.11.0'
