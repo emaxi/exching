@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '2.11.0'
   gem 'spork', '0.9.2'
   gem 'sqlite3', '1.3.5'
+
+  gem 'unicorn'
 end
 
 group :production do
